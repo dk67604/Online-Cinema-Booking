@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Search Movie</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="Script.js"></script>
+	</head>
+	<body background="grayscale_hexagon.png" ng-app="myModule">
+		<font color="white" size="20">Search By</font><p></p>
+		<font color="white">Name : </font><input type="text" ng-model="searchText.name"></input><p></p>
+		<font color="white">Date : </font><input type="date" ></input><p></p>
+		<font color="white">Time : </font><input type="time" ></input><p></p>
+		<font color="white">Genre : </font><input type="text" ng-model="searchText.genre"></input><p></p>
+		<font color="white">Results : </font><p></p>
+
+		<div ng-controller="myController">
+			<table>
+				<thead>
+					<tr>
+						<th><font color="white">Name</font></th>
+						<th><font color="white">Genre</font></th>
+						<th><font color="white">Date</font></th>
+						<th><font color="white">Time</font></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="movie in Movie | filter:searchText">
+						<td><font color="white"> {{ movie.name }} </font></td>
+						<td><font color="white"> {{ movie.genre }} </font></td>
+						<td><font color="white"> {{ movie.date }} </font></td>
+						<td><font color="white"> {{ movie.time }} </font></td>
+				</tbody>
+
+			</table>
+			
+			<p>{{ greeting.success }}</p>
+		</div>
+
+
+	</body>
+</html>

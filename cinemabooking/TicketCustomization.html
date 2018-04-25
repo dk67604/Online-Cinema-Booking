@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<h1> Customize Your Ticket </h1>
+	<title>Ticket Customization</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="ticketController.js"></script>
+	<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="ticket_customization_stylesheet.css" rel="stylesheet" >
+</head>
+
+<body ng-app="ticketModule">
+	<div  ng-controller="ticketController">
+
+	<!-- div that contains the title that's inside of an h2 element -->
+	<div id="movieTitleDiv">
+		<h2 id="movieTitle"> Selected Movie: </h2>
+	</div>
+ 	<!-- Div that contains the  ticket -->
+	<div id="ticketDiv">
+				<table id="ticket" border="1"  width="900px"> <!-- A table to represent a ticket -->
+				<!-- The movie title for the ticket -->
+				  <tr>
+					<td  colspan="3">
+							Normal Seat: <input class="text-muted" ng-model="seat.normal">
+							Child Seat: <input class="text-muted" ng-model="seat.child">
+							Senior Seat: <input class="text-muted" ng-model="seat.senior">
+					</td>
+				  </tr>
+					<tr>
+						<td colspan="3">
+							Showtimes:
+						</td>
+					</tr>
+					<tr>
+						<div class="btn-group">
+						<td  ng-repeat="show in showtimes">
+
+						<button type="button" class="btn btn-primary" id="show-{{$index}}" ng-click="selectShowtime(show)">
+							{{show.showtime}}</button>
+
+						</td>
+					</div>
+					</tr>
+				  <tr>
+				  	<td  colspan="3">Selected Seats : <div ng-show="seatsPresent" ng-bind="selectedSeats"></div></td>
+				  </tr>
+				  <tr>
+				  	<td  colspan="3"><button class="btn btn-warning" type="submit" ng-click="selectSeats(seat)"> Select a seat </button></td>
+				  </tr>
+			<!-- Price cell -->
+				  <tr>
+					<td  colspan="3">Price: <p ng-bind="price.cost"><p></td>
+				  </tr>
+				</table> <!-- End of first table-->
+				<div>
+					<button class="btn btn-warning" ng-click="continue()">Continue to Payment</button>
+				</div>
+	</div><!-- End of the page's single div -->
+</div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<link href="stylesheet.css" rel="stylesheet" >
+			<title>Account Registration</title>
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+			<script src="RegistrationScript.js"></script>
+			<h1>Register an Account</h1>
+		</head>
+		<body ng-app="regModule">
+			<div ng-controller="regController">
+			<p>To register, please fill out the following forms. </p>
+				<span ng-show="emailExist"><h3>EmailId already exists in the system</h3></span>				
+
+				<form name="regForm" ng-submit="registerUser(regForm.$valid)">
+					
+					Email :<input type="text" placeholder="Email" ng-model="employee.emailAddress" ng-required="true">*
+					
+					<br>
+					Password :<input type="password" placeholder="Password" ng-model="employee.password" ng-required="true">*
+					<br>
+					First Name :<input type="text" placeholder="First Name" ng-model="employee.firstName" ng-required="true">*
+					<br>
+					Last Name :<input type="text" placeholder="Last Name" ng-model="employee.lastName" ng-required="true">*
+					<br>
+					<input type="checkbox" id="promotions" value="newsletter" ng-model="employee.promotion">
+					<label for="promotions">Subscribe to recieve promotional offers</label>
+					<p>Payment information</p>
+					Address :<input type="text" placeholder="Street Address" ng-model="employee.address.streetAddress">
+					<br>
+					State :<input type="text" placeholder="State" ng-model="employee.address.state">
+					<br>
+					Zip Code :<input type="text" name="zipcode" placeholder="Zip Code" ng-pattern="/^[0-9]{5}$/" ng-model="employee.address.zipCode">
+					<span ng-show="regForm.zipcode.$error.pattern">Not a valid number!</span>
+					<br>
+					Credit Card Number :<input type="text" name="card_number" placeholder="Credit Card Number" ng-pattern="/^[0-9]*$/" ng-model="card">
+					<span ng-show="regForm.card_number.$error.pattern">Not a valid number!</span>
+					<br>
+					Expiration Date :<input type="date" placeholder="Expiration Date" ng-model="expiryDate">
+					<br>
+					Security Code :<input type="text" name="seccode" ng-pattern="/^[0-9]{3}$/" ng-model="securitycode">
+					<span ng-show="regForm.seccode.$error.pattern">Not a valid number!</span>
+					<p>* Denotes a required field.</p>
+
+					
+					<input type="submit" value="Register">
+				</form>
+				
+				
+			</div>
+
+
+		</body>
+	</html> 

@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+		<script src="seatSel.js"></script>
+		<link href="stylesheet.css" rel="stylesheet" >
+
+		<h3 align="center">Screen this side</h3>
+	</head>
+	<body ng-app="seatModule">
+		<div ng-controller="seatController" data-ng-init="init()">
+			<div id="container" style="width: 80%">
+			</div>
+			<br>
+			<div style="margin-left: 45%">
+				<button type="button" style="background-color: lightblue" ng-click="bookSeats(selectSeats)">Select Seats</button>
+			</div>
+		</div>
+	</body>
+</html>

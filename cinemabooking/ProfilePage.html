@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<link href="stylesheet.css" rel="stylesheet">
+		<script src="showProfile.js"></script>
+	</head>
+	<body ng-app="profileModule">
+		<div ng-controller="profileController" id="container">
+			<h1>User Profile</h1>
+			<div>
+				<table>
+					<tr>
+						<td>
+							Name:
+						</td>
+						<td>
+							<input ng-model="user.Name">
+						</td>
+					 </tr>
+					 <tr>
+					 	<td>
+					 		EmailID: 
+					 	</td>
+					 	<td>
+					 		<input ng-model="user.EmailID">
+					 	</td>
+					 </tr>
+					 <tr>
+					 	<td>
+					 		Street: 
+					 	</td>
+					 	<td>
+					 		<input ng-model="user.Address.Street"><br>
+					 	</td>
+					 </tr>
+					 <tr>
+					 	<td>
+					 		City: 
+					 	</td>
+					 	<td>
+					 		<input ng-model="user.Address.City">
+					 	</td>
+					 </tr>
+					 <tr>
+					 	<td>
+					 		State: 
+					 	</td>
+					 	<td>
+					 		<input ng-model="user.Address.State">
+					 	</td>
+					 </tr>
+					 <tr>
+					 	<td>
+					 		Zipcode: 
+					 	</td>
+					 	<td>
+					 		<input ng-model="user.Address.Zipcode">
+					 	</td>
+					 </tr>
+					 <tr align="center">
+					 	<td colspan="2"><button type="button" ng-click="updateUser(user)">Update</button></td>
+					 </tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

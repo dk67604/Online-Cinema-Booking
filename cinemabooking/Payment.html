@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="payment.js"></script>
+		<link href="stylesheet.css" rel="stylesheet" >
+	</head>
+	<body ng-app="payModule">
+		<h1>CheckOut</h1>
+		<div ng-controller="payController">
+			<div>
+			<table>
+				<tr>
+					<td>
+						Normal Seats:
+					</td>
+					<td ng-bind="ticket.normalSeats">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Child Seats:
+					</td>
+					<td ng-bind="ticket.childSeats">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Senior Seats:
+					</td>
+					<td ng-bind="ticket.seniorSeats">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Seats Selected:
+					</td>
+					<td ng-bind="ticket.selectedSeats">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Total Price
+					</td>
+					<td ng-bind="ticket.ticketPrice">
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						Name on Card:
+					</td>
+					<td>
+						<input ng-model="user.Name" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					Card Number
+					</td>
+					<td>
+						<input ng-model="user.CardNo" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					Card Type:
+					</td>
+					<td>
+						<input ng-model="user.CardType" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					Expiry Month
+					</td>
+					<td>
+						<input ng-model="user.ExpM" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					Expiry Year:
+					</td>
+					<td>
+						<input ng-model="user.ExpY" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					Security Code:
+					</td>
+					<td>
+						<input ng-model="user.securCode" required>
+					</td>
+				</tr>
+				<tr align="center">
+					<td colspan="2">
+					<button ng-click="submitPayment()" style="width: 120px">Pay</button>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+	</body>
+</html>

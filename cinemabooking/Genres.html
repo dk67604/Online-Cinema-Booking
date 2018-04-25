@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+			<script src="ShowMovies.js"></script>
+			<link href="stylesheet.css" rel="stylesheet" >
+			<title>Genres</title>
+			<h1>Genres</h1>
+
+			<!-- Allows for the use of AngularJS -->
+			<!-- script src="bower_components/angular/angular.js"></script>
+			< The script that contains resultApp >
+			<script src="resultApp.js"></script-->
+
+
+		</head>
+		<body ng-app="movieModule">
+
+			<div style="text-align:center" ng-controller="movieController" data-ng-init="init()"><!-- Div -->
+				<div style="text-align:right; color:orange; float:right"><a ng-click="goToProfile()">Profile</a></div>
+				<p>Browse movies by selecting a genre from the menu below.</p>
+				<select  style="width:200px;"><!-- Dropdown Genre Selection -->
+				  <option value="Action">Action</option>
+				  <option value="Horror">Horror	</option>
+				  <option value="Mystery">Mystery</option>
+				  <option value="Romance">Romance</option>
+				  <option value="Thriller">Thriller</option>
+				</select> <!-- End of dropdown-->
+
+
+
+
+				<!-- Four tables stacked on top of each other. -->
+				<table id="tile1" border="1"  width="900px"> <!-- First table -->
+					<tbody ng-repeat="movie in movies">
+						<tr>
+							<th colspan="3" ng-model="movieTitle">Title: {{movie.title}}</th>
+						</tr>
+						<tr>
+							<td rowspan="2"><img style="width:300px;height:200px;" ng-src="{{movie.trailer}}" alt="Poster"></img></td>
+							<td>Director: {{movie.director}}</td>
+						</tr>
+						<tr>
+							<td>Rating: {{movie.rating}}</td>
+						</tr>
+						<tr>
+							<td rowspan="2">
+								<iframe  width="560" ng-src="{{movie.movieTrailer}}" height="315" allowfullscreen></iframe>
+							</td>
+							<td>Genre: {{movie.category}}</td>
+						</tr>
+						<tr>
+
+
+							<td>Cast: {{movie.cast}}</td>
+						</tr>
+						<tr>
+							<td colspan="3"> <button ng-click="bookTicket(movie)">Book Ticket</button><td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+						</tbody>
+				</table> <!-- End of first table-->
+
+
+
+
+			</div><!-- End of div -->
+
+		</body><!-- End of body -->
+	</html> <!-- End of HTML -->

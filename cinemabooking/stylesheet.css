@@ -1,0 +1,84 @@
+body{
+	background-image: url("grayscale_hexagon.png");
+	color: white;
+	background-attachment:fixed;
+}
+
+h1{
+	background-color: black;
+	height: 60px;
+	width: 500px;
+	margin:auto; /* automatically centers the div.*/
+	border-radius: 20px;
+	opacity: 1;
+	color: white;
+	align:center;
+	text-align: center;/* Text inside of any web element doesn't need to be centered.
+			       I added this property to make the example page more organized.*/
+
+}
+
+/* I think any collection of html elements should be placed in a div. */
+div{
+	background-color: black;
+	width: 1000px;
+	margin:auto; /* automatically centers the div.*/
+	border-radius: 20px;
+	opacity: 1;
+}
+
+p{
+
+	text-align: center; /* centering used again. */
+
+}
+
+form{
+
+	padding: 20px;
+}
+
+
+input{
+
+	margin: 5px;
+
+}
+
+input[type=text]{
+
+	background-color: white;
+	border-radius: 5px;
+	opacity: 1;
+}
+input[type=checkbox]{
+
+	background-color: white;
+	border-radius: 5px;
+	opacity: 1;
+}
+
+input[type=submit]{
+	border-radius: 10px;
+	background-color: blue;
+	color: white;
+	opacity: 1;
+}
+
+#form_div{
+
+	width: 200px;
+
+}
+
+#example_div{
+
+	height: 300px;
+
+}
+
+#headerTitle{
+
+margin-top: 2px;
+
+}
